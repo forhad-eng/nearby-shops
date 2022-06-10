@@ -10,12 +10,12 @@ function App() {
     const [filter, setFilter] = useState({ area: '', category: '' })
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <Nav filter={filter} setFilter={setFilter} />
             <Routes>
                 <Route path="/" element={<ViewShops filter={filter} />} />
                 <Route path="/add-shop" element={<AddShop />} />
-                <Route path="/manage-shops" element={<ManageShops/>} />
+                <Route path="/manage-shops" element={<ManageShops />} />
             </Routes>
         </div>
     )

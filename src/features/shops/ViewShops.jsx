@@ -34,18 +34,18 @@ const ViewShops = ({ filter }) => {
                     <h3 className="text-center text-2xl text-red-400">
                         Your search matched {filteredShop.length} result(s)
                     </h3>
-                    <div className="grid grid-cols-3 gap-5 mt-6 mb-20">
+                    <div className="grid lg:grid-cols-3 gap-10 mt-6 mb-20">
                         {filteredShop.map((shop, index) => (
                             <div class="card bg-base-100 shadow-xl">
                                 <figure>
                                     <img
-                                        className="w-full h-80"
+                                        className="w-full h-60"
                                         src={`https://picsum.photos/200/300?random=${index + 1}`}
                                         alt="Shop Pic"
                                     />
                                 </figure>
                                 <div class="card-body pl-3">
-                                    <div className="flex">
+                                    <div className="flex justify-between items-center">
                                         <h2 class="card-title">{shop.name}</h2>{' '}
                                         {shop.date.includes(getToday(today)) ? (
                                             <div class="badge badge-primary text-white">Open Today</div>
@@ -72,7 +72,7 @@ const ViewShops = ({ filter }) => {
                                 <div class="card bg-base-100 shadow-xl">
                                     <figure>
                                         <img
-                                            className="w-full h-80"
+                                            className="w-full h-60"
                                             src={`https://picsum.photos/200/300?random=${index + 1}`}
                                             alt="Shop Pic"
                                         />
