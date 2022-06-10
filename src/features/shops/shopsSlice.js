@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const shopSlice = createSlice({
-    name: 'shop-list',
+    name: 'shopList',
     initialState: { shops: [] },
     reducers: {
         showAllShops: state => state.shops,
