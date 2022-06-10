@@ -35,12 +35,16 @@ const ViewShops = ({ filter }) => {
                         Your search matched {filteredShop.length} result(s)
                     </h3>
                     <div className="grid grid-cols-3 gap-5 mt-6 mb-20">
-                        {filteredShop.map(shop => (
-                            <div class="card w-96 bg-base-100 shadow-xl">
+                        {filteredShop.map((shop, index) => (
+                            <div class="card bg-base-100 shadow-xl">
                                 <figure>
-                                    <img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" />
+                                    <img
+                                        className="w-full h-80"
+                                        src={`https://picsum.photos/200/300?random=${index + 1}`}
+                                        alt="Shop Pic"
+                                    />
                                 </figure>
-                                <div class="card-body">
+                                <div class="card-body pl-3">
                                     <div className="flex">
                                         <h2 class="card-title">{shop.name}</h2>{' '}
                                         {shop.date.includes(getToday(today)) ? (
@@ -63,13 +67,17 @@ const ViewShops = ({ filter }) => {
                 {shops.length > 0 ? (
                     <div>
                         <h2 className="text-center text-3xl font-bold mb-10">Shop List</h2>
-                        <div className="grid grid-cols-3 gap-x-5 gap-y-10">
-                            {shops.map(shop => (
-                                <div class="card w-96 bg-base-100 shadow-xl">
+                        <div className="grid lg:grid-cols-3 gap-10">
+                            {shops.map((shop, index) => (
+                                <div class="card bg-base-100 shadow-xl">
                                     <figure>
-                                        <img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" />
+                                        <img
+                                            className="w-full h-80"
+                                            src={`https://picsum.photos/200/300?random=${index + 1}`}
+                                            alt="Shop Pic"
+                                        />
                                     </figure>
-                                    <div class="card-body">
+                                    <div class="card-body pl-3">
                                         <div className="flex justify-between items-center">
                                             <h2 class="card-title">{shop.name}</h2>{' '}
                                             {shop.date.includes(getToday(today)) ? (
