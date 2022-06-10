@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom'
+import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link, NavLink } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({ filter, setFilter }) => {
     const menuItems = (
         <>
             <li>
-                <Link to="/">All Shops</Link>
+                <NavLink to="/">All Shops</NavLink>
             </li>
             <li>
-                <Link to="/add-shop">Add Shop</Link>
+                <NavLink to="/add-shop">Add Shop</NavLink>
             </li>
         </>
     )
@@ -39,13 +41,50 @@ const Nav = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl">Nearby Shops</a>
+                <Link to="/" class="btn btn-ghost normal-case text-xl">
+                    Nearby Shops
+                </Link>
             </div>
             <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">{menuItems}</ul>
+                <form className="flex items-center gap-2">
+                    <span className="block cursor-pointer">
+                        <FontAwesomeIcon icon={faFilter} /> Filter By
+                    </span>
+
+                    <select
+                        onChange={e => setFilter({ ...filter, area: e.target.value })}
+                        class="select select-primary w-32"
+                    >
+                        <option disabled selected>
+                            Area
+                        </option>
+                        <option>Thane</option>
+                        <option>Pune</option>
+                        <option>Mumbai</option>
+                        <option>Suburban</option>
+                        <option>Nashik</option>
+                        <option>Nagpur</option>
+                        <option>Ahmednagar</option>
+                        <option>Solapur</option>
+                    </select>
+                    <select
+                        onChange={e => setFilter({ ...filter, category: e.target.value })}
+                        class="select select-primary w-32"
+                    >
+                        <option disabled selected>
+                            Category
+                        </option>
+                        <option>Grocery</option>
+                        <option>Butcher</option>
+                        <option>Baker</option>
+                        <option>Chemist</option>
+                        <option>Stationery shop</option>
+                    </select>
+                    <span onClick={() =>setFilter({})} className="btn btn-error text-white">Reset Filter</span>
+                </form>
             </div>
             <div class="navbar-end">
-                <a class="btn">Get started</a>
+                <ul class="menu menu-horizontal p-0">{menuItems}</ul>
             </div>
         </div>
     )

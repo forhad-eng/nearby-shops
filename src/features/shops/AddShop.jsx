@@ -18,8 +18,9 @@ const AddShop = () => {
     }
 
     return (
-        <div class="max-w-md mx-auto border-2 rounded-lg">
+        <div class="max-w-md mx-auto border-2 rounded-lg my-10">
             <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+                <h2 className="text-center text-2xl font-bold">Add Shop</h2>
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Name</span>
@@ -30,7 +31,7 @@ const AddShop = () => {
                             pattern: { value: /^[A-Z a-z]+$/, message: 'Invalid name' }
                         })}
                         type="text"
-                        placeholder="shop name"
+                        placeholder="Shop name"
                         class="input input-bordered"
                     />
                     {errors?.name?.type === 'required' && <p className="text-red-600">{errors.name.message}</p>}
@@ -80,9 +81,9 @@ const AddShop = () => {
                         <span class="label-text">Opening Date</span>
                     </label>
                     <input
-                        {...register('date', { required: { value: true, message: 'date is required' } })}
+                        {...register('date', { required: { value: true, message: 'Date is required' } })}
                         type="text"
-                        placeholder="opening date"
+                        placeholder="Sat, Sun, Mon, Tue, Wed, Thu, Fri"
                         class="input input-bordered"
                     />
                     {errors?.date?.type === 'required' && <p className="text-red-600">{errors.date.message}</p>}
