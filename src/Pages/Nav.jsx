@@ -6,10 +6,19 @@ const Nav = ({ filter, setFilter }) => {
     const menuItems = (
         <>
             <li>
-                <NavLink to="/">All Shops</NavLink>
+                <NavLink className="btn-accent text-white" to="/">
+                    All Shops
+                </NavLink>
             </li>
             <li>
-                <NavLink to="/add-shop">Add Shop</NavLink>
+                <NavLink className="btn-accent text-white" to="/manage-shops">
+                    Manage Shops
+                </NavLink>
+            </li>
+            <li>
+                <NavLink className="btn-accent text-white" to="/add-shop">
+                    Add Shop
+                </NavLink>
             </li>
         </>
     )
@@ -80,11 +89,13 @@ const Nav = ({ filter, setFilter }) => {
                         <option>Chemist</option>
                         <option>Stationery shop</option>
                     </select>
-                    <span onClick={() =>setFilter({})} className="btn btn-error text-white">Reset Filter</span>
+                    <span onClick={() => setFilter({})} className="btn btn-error text-white">
+                        Reset Filter
+                    </span>
                 </form>
             </div>
             <div class="navbar-end">
-                <ul class="menu menu-horizontal p-0">{menuItems}</ul>
+                <ul class="menu menu-horizontal p-0 gap-2">{menuItems}</ul>
             </div>
         </div>
     )

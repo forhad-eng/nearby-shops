@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid'
 import { addShop } from './shopsSlice'
 
 const AddShop = () => {
@@ -13,6 +14,7 @@ const AddShop = () => {
     } = useForm()
 
     const onSubmit = data => {
+        console.log(data)
         dispatch(addShop(data))
         reset()
     }
@@ -88,8 +90,9 @@ const AddShop = () => {
                     />
                     {errors?.date?.type === 'required' && <p className="text-red-600">{errors.date.message}</p>}
                 </div>
+                <input {...register('uid')} type="hidden" value={uuidv4()} />
                 <div class="form-control mt-6">
-                    <button class="btn btn-primary">Add</button>
+                    <button class="btn btn-primary text-white">Add</button>
                 </div>
             </form>
         </div>
