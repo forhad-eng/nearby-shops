@@ -14,7 +14,6 @@ const AddShop = () => {
     } = useForm()
 
     const onSubmit = data => {
-        console.log(data)
         dispatch(addShop(data))
         reset()
     }

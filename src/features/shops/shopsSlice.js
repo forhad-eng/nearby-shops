@@ -7,9 +7,12 @@ const shopSlice = createSlice({
         showAllShops: state => state.shops,
         addShop: (state, action) => {
             state.shops = [...state.shops, action.payload]
+        },
+        deleteShop: (state, action) => {
+            state.shops = state.shops.filter(shop => shop.uid !== action.payload)
         }
     }
 })
 
-export const { showAllShops, addShop } = shopSlice.actions
+export const { showAllShops, addShop, deleteShop } = shopSlice.actions
 export default shopSlice.reducer

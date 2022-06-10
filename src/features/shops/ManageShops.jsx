@@ -1,7 +1,9 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteShop } from './shopsSlice'
 
 const ManageShops = () => {
     const { shops } = useSelector(state => state.shopReducer)
+    const dispatch = useDispatch()
 
     return (
         <div class="overflow-x-auto mt-14">
@@ -27,7 +29,9 @@ const ManageShops = () => {
                                 <button className="btn btn-sm">Update</button>
                             </td>
                             <td>
-                                <button className="btn btn-sm">Delete</button>
+                                <button onClick={() => dispatch(deleteShop(shop.uid))} className="btn btn-sm">
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}
