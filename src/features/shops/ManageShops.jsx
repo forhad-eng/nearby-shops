@@ -9,7 +9,7 @@ const ManageShops = () => {
     const [needToUpdate, setNeedToUpdate] = useState(null)
 
     return (
-        <div class="overflow-x-auto mt-14">
+        <div class="overflow-x-auto mt-10">
             <table class="table w-full">
                 <thead>
                     <tr>
