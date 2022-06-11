@@ -28,8 +28,8 @@ const ViewShops = ({ filter }) => {
     const filteredShop = shops.filter(shop => shop.area === area && shop.category === category)
 
     return (
-        <div className="mt-14 mb-20">
-            {filteredShop.length > 0 && (
+        <div className="mt-6 lg:mt-14 mb-20">
+            {filteredShop?.length > 0 && (
                 <div>
                     <h3 className="text-center text-2xl text-red-400">
                         Your search matched {filteredShop.length} result(s)

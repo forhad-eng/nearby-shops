@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid'
 import { addShop } from './shopsSlice'
@@ -15,6 +16,7 @@ const AddShop = () => {
 
     const onSubmit = data => {
         dispatch(addShop(data))
+        toast.success('Shop added successfully', { id: 'shop-added' })
         reset()
     }
 

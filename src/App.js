@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Toaster } from 'react-hot-toast'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import AddShop from './features/shops/AddShop'
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/add-shop" element={<AddShop />} />
                 <Route path="/manage-shops" element={<ManageShops />} />
             </Routes>
+            <Toaster />
         </div>
     )
 }
