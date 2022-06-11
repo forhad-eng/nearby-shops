@@ -1,8 +1,10 @@
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const Nav = ({ filter, setFilter }) => {
+    const { pathname } = useLocation()
+
     const menuItems = (
         <>
             <li>
@@ -55,7 +57,7 @@ const Nav = ({ filter, setFilter }) => {
                         Nearby Shops
                     </Link>
                 </div>
-                <div class="navbar-center hidden lg:flex">
+                <div class={`navbar-center ${pathname === '/' ? 'hidden lg:flex' : 'hidden'}`}>
                     <div className="flex items-center gap-2">
                         <span className="block cursor-pointer">
                             <FontAwesomeIcon icon={faFilter} /> Filter by
@@ -101,7 +103,7 @@ const Nav = ({ filter, setFilter }) => {
                 </div>
             </div>
 
-            <div className="flex lg:hidden justify-evenly items-center gap-1">
+            <div className={`${pathname === '/' ? 'flex lg:hidden justify-evenly items-center gap-1' : 'hidden'} `}>
                 <span className="block cursor-pointer">
                     <FontAwesomeIcon icon={faFilter} /> Filter by
                 </span>
