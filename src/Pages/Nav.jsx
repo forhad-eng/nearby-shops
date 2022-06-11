@@ -58,7 +58,7 @@ const Nav = ({ filter, setFilter }) => {
                 <div class="navbar-center hidden lg:flex">
                     <div className="flex items-center gap-2">
                         <span className="block cursor-pointer">
-                            <FontAwesomeIcon icon={faFilter} /> Filter By
+                            <FontAwesomeIcon icon={faFilter} /> Filter by
                         </span>
 
                         <select
@@ -70,8 +70,7 @@ const Nav = ({ filter, setFilter }) => {
                             </option>
                             <option>Thane</option>
                             <option>Pune</option>
-                            <option>Mumbai</option>
-                            <option>Suburban</option>
+                            <option>Mumbai Suburban</option>
                             <option>Nashik</option>
                             <option>Nagpur</option>
                             <option>Ahmednagar</option>
@@ -88,6 +87,7 @@ const Nav = ({ filter, setFilter }) => {
                             <option>Butcher</option>
                             <option>Baker</option>
                             <option>Chemist</option>
+                            <option>Phone</option>
                             <option>Stationery shop</option>
                         </select>
 
@@ -115,8 +115,7 @@ const Nav = ({ filter, setFilter }) => {
                     </option>
                     <option>Thane</option>
                     <option>Pune</option>
-                    <option>Mumbai</option>
-                    <option>Suburban</option>
+                    <option>Mumbai Suburban</option>
                     <option>Nashik</option>
                     <option>Nagpur</option>
                     <option>Ahmednagar</option>
@@ -133,10 +132,11 @@ const Nav = ({ filter, setFilter }) => {
                     <option>Butcher</option>
                     <option>Baker</option>
                     <option>Chemist</option>
+                    <option>Phone</option>
                     <option>Stationery shop</option>
                 </select>
 
-                <span onClick={() => setFilter(null)} className="btn btn-error text-white">
+                <span onClick={() => setFilter({})} className="btn btn-error text-white">
                     Reset
                 </span>
             </div>

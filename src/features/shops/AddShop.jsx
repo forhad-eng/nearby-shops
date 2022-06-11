@@ -75,6 +75,7 @@ const AddShop = () => {
                         <option>Butcher</option>
                         <option>Baker</option>
                         <option>Chemist</option>
+                        <option>Phone</option>
                         <option>Stationery shop</option>
                     </select>
                     {errors?.category?.type === 'required' && <p className="text-red-600">{errors.category.message}</p>}
